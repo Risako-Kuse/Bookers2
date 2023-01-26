@@ -73,6 +73,11 @@
     </nav>
   </header>
   <main>
+    <!--<p class="notice"></p>-->
+    <div>
+  <%= flash[:notice] %>
+   </div>
+
     <%= yield %>
   </main>
   <footer>

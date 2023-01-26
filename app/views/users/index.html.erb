@@ -1,2 +1,31 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div>
+  <%= flash[:notice] %>
+</div>
+
+　<%= render 'books/list', book: @book, user: @user %>
+
+   <div class="col-md-8 offset-md-1">
+     <h2>Users</h2>
+
+    <table class="table table-hover table-inverse">
+      <thead>
+        <tr>
+        <th>image</th>
+        <th>name</th>
+        <th></th>
+       </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+       <tr>
+         <td><%= image_tag user.get_image(100,100) %></td>
+         <td><%= user.name %></td>
+         <td><%= link_to "Show", user_path(user.id) %></td>
+       </tr>
+       <%end%>
+       </tbody>
+    </table>
+   </div>
+
+ </div>
+ </div>
